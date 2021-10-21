@@ -34,6 +34,30 @@ namespace BankingAppTest
         public int Id { get; set; }
         public string Description { get; set; }
         public decimal Amount { get; set; }
+        
+        /// <summary>
+        /// Add transactions to account
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="amount"></param>
+        /// </param name="accountNumber"></param>
+        public void AddTransaction(string description, decimal amount, string accountNumber = null)
+        {
+	       /* var account = Customer.GetDefaultAccount();
 
+	        if (!string.IsNullOrWhiteSpace(accountNumber))
+	        {
+		        account = Customer.Accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
+	        }
+
+	        account.Transactions.Add(new Transactions()
+	        {
+		        Amount = amount,
+		        Description = description
+	        });
+	        account.UpdateBalance(amount);
+            */
+        }
     }
+
 }

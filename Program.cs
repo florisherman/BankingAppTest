@@ -6,18 +6,16 @@ namespace BankingAppTest
     class Program
     {
 
-        private enum menuOption
-        {
-            ViewTransactions = 1,
-            DoTransaction = 2,
-            ShowBalance = 3
-
-        }
+     
 
         //TODO implement the following method
-        //The app needs to be optmized to allow mutiple.
+       //implement a menu
+       //allow repeatable transactions
+  
         static void Main(string[] args)
         {
+          
+
             WorkFlow w = new WorkFlow();
             Console.WriteLine("Welcome to Capricorn Group Test App!");
 
@@ -46,31 +44,35 @@ namespace BankingAppTest
             Console.Clear();
             Console.WriteLine($"Welcome to the app {customer.FirstName} {customer.LastName}");
 
-            Console.WriteLine(
-                "Main Menu :" + Environment.NewLine +
-                "Press 1 to Post Transaction" + Environment.NewLine +
-                "Press 2 to view Transactions" + Environment.NewLine +
-                "Press 3 to Check Available Balance"
-            );
-
-            Console.WriteLine("Please enter you transaction Details");
-            Console.Write("Item Description:");
-            var decription = Console.ReadLine();
-
-            var stringAmount = "";
-            decimal amount;
-            while (!Decimal.TryParse(stringAmount, out amount))
+            while (true)
             {
-	            Console.Write("Amount :");
-	            stringAmount = Console.ReadLine();
-            };
+                Console.WriteLine(
+                    "Main Menu :" + Environment.NewLine +
+                    "Press 1 to Post Transaction" + Environment.NewLine +
+                    "Press 2 to view Transactions" + Environment.NewLine +
+                    "Press 3 to Check Available Balance" + Environment.NewLine +
+                    "Press 4 to Quit"
+                );
 
-            w.AddTransaction(decription, amount);
+                Console.WriteLine("Please enter you transaction Details");
+                Console.Write("Item Description:");
+                var decription = Console.ReadLine();
 
-            Console.Clear();
-            Console.WriteLine($"Transaction added: {decription} for N${amount}");
+                var stringAmount = "";
+                decimal amount;
+                while (!Decimal.TryParse(stringAmount, out amount))
+                {
+                    Console.Write("Amount :");
+                    stringAmount = Console.ReadLine();
+                };
 
-            Console.ReadKey();
+                w.AddTransaction(decription, amount);
+
+                Console.Clear();
+                Console.WriteLine($"Transaction added: {decription} for N${amount}");
+
+                Console.ReadKey();
+            }
         }
     }
 }
