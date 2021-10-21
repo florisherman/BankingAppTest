@@ -3,6 +3,24 @@ using System.Collections.Generic;
 
 namespace BankingAppTest
 {
+
+    /***
+     * Test Objectives
+     * 
+     * Basic C# knowledge
+     *
+     * 1. Add a Transaction.
+     *      => Available balance should be outputed to the screen after a successfull transaction was posted
+     *
+.     * 2. View A list of Transactions(Transaction History)
+     *      => Account Balancs. that occured on the system
+     *
+     * 3. Check Available Balance 
+     * 
+     * 4. Prevent the user from entering a negative balance to make the Unit Test pass 
+     *
+     * 5. Add a Unit Test to make sure your balance cannot go into the Negative
+     * ***/
     class Program
     {
         private enum _menuOptions
@@ -12,10 +30,6 @@ namespace BankingAppTest
             CheckBalance = 3,
             Quit
         }
-
-        //TODO implement the following method
-        //implement a menu
-        //allow repeatable transactions
 
         static void Main(string[] args)
         {
@@ -46,7 +60,7 @@ namespace BankingAppTest
                 switch (menuOption)
                 {
                     case (int)_menuOptions.PostTransactions:
-
+                       
                         Console.WriteLine("Please enter you transaction Details");
                         Console.Write("Item Description:");
                         var description = Console.ReadLine();
@@ -60,27 +74,56 @@ namespace BankingAppTest
 
                         } while (!Decimal.TryParse(stringAmount, out amount));
 
-                        account.AddTransaction(description, amount);
+                        
+                        try
+                        {
+                            /*TODO
+                           
+                                Post(add) a Transaction
+                                account.AddTransaction(description, amount); 
 
-                        Console.WriteLine($"Transaction added: {description} for N${amount} new balance {account.AvailableBalance} \n Press any key to continue ...");
+                                TODO
+                                Display Transaction Info of new Balance
+                                Console.WriteLine($"Transaction added: {description} for N${amount} new balance {account.AvailableBalance}");
+                           
+                             */
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+
+                        Console.WriteLine("Press any key to continue ...");
                         Console.ReadKey();
 
                         break;
                     case (int)_menuOptions.ViewTransactions:
-	                    foreach (var transaction in account.Transactions)
-	                    {
-		                    Console.WriteLine($"Transaction Id {transaction.Id}: {transaction.Description} for N${transaction.Amount}");
-	                    }
+
+                        /*TODO
+                         * Transaction History
+                       
+                            foreach (var transaction in account.Transactions)
+                            {
+		                        Console.WriteLine($"Transaction Id {transaction.Id}: {transaction.Description} for N${transaction.Amount}");
+	                        }
+                        
+                        */
+
                         break;
                     case (int)_menuOptions.CheckBalance:
-	                    Console.WriteLine($"Your available balance is = {account.AvailableBalance} \n Press any key to continue ...");
+
+                        /*TODO
+	                        View Balance
+
+                            Console.WriteLine($"Your available balance is = {account.AvailableBalance} \n Press any key to continue ...");
+
+	                     */
+
                         break;
                     case (int)_menuOptions.Quit:
                         Environment.Exit(0);
                         break;
                 }
-
-                Console.Clear();
 
             }
 
@@ -92,12 +135,10 @@ namespace BankingAppTest
 	        string stringMenuOption = "";
             do
 	        {
-                Console.Clear();
-
                 Console.WriteLine(
 			        "Main Menu :" + Environment.NewLine +
 			        "Press 1 to Post Transaction" + Environment.NewLine +
-			        "Press 2 to view Transactions" + Environment.NewLine +
+			        "Press 2 to View Transactions" + Environment.NewLine +
 			        "Press 3 to Check Available Balance" + Environment.NewLine +
 			        "Press 4 to Quit"
 		        );
