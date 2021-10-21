@@ -10,10 +10,11 @@ namespace BankingAppTest
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public List<Account> Accounts { get; set; }
+        public List<Account> Accounts { get; set; } = new List<Account>();
+
         public Account GetDefaultAccount()
         {
-            return Accounts.OrderBy(a => a.AccountNumber).FirstOrDefault();
+            return Accounts.FirstOrDefault();
         }
     }
 

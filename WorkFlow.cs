@@ -8,27 +8,27 @@ namespace BankingAppTest
 {
     public class WorkFlow
     {
-        public List<Transactions> TransactionList { get; set; }
-        public Account Account { get; set; }
         public Customer Customer { get; set; }
 
         public WorkFlow()
         {
-            Account = new Account();
-            Account.Transactions = TransactionList;
-
             Customer = new Customer();
-            Customer.Accounts = new List<Account>() { Account };
         }
 
         /// <summary>
-        /// 
+        /// Add transactions to account
         /// </summary>
         /// <param name="description"></param>
         /// <param name="amount"></param>
-        public void AddTransaction(string description, decimal amount)
+        /// </param name="accountNumber"></param>
+        public void AddTransaction(string description, decimal amount, string accountNumber = null)
         {
             var account = Customer.GetDefaultAccount();
+
+            if(!string.IsNullOrWhiteSpace(accountNumber)){
+                account = Customer.Accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
+            }
+            
             account.Transactions.Add(new Transactions()
             {
                 Amount = amount,
@@ -38,22 +38,23 @@ namespace BankingAppTest
         }
 
         /// <summary>
-        /// 
+        /// Show the Customer created within the Workflow
         /// </summary>
         /// <returns></returns>
-        public Customer ShowCustomer()
+        public Customer GetCustomer()
         {
             return Customer;
         }
 
-        /// <summary>b
-        /// 
+        /// <summary>
+        /// Allows you to create a customer with an opening Balance
         /// </summary>
         /// <param name="customer"></param>
         /// <param name="openingBalance"></param>
         public void CreateCustomer(Customer customer, decimal openingBalance)
         {
             Customer = customer;
+
             Customer.Accounts = new List<Account>()
                 {
                     new Account()
