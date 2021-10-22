@@ -20,6 +20,7 @@ namespace BankingAppTest
      * 4. Prevent the user from entering a negative balance to make the Unit Test pass 
      *
      * 5. Add a Unit Test to make sure your balance cannot go into the Negative
+     * 
      * ***/
     class Program
     {
@@ -80,11 +81,12 @@ namespace BankingAppTest
                             /*TODO
                            
                                 Post(add) a Transaction
-                                account.AddTransaction(description, amount); 
+                                account.AddTransaction(description, amount);
+                                Console.WriteLine($"Transaction added: {description} for N${amount} new balance {account.AvailableBalance}");
 
                                 TODO
                                 Display Transaction Info of new Balance
-                                Console.WriteLine($"Transaction added: {description} for N${amount} new balance {account.AvailableBalance}");
+                              
                            
                              */
                         }
@@ -99,24 +101,25 @@ namespace BankingAppTest
                         break;
                     case (int)_menuOptions.ViewTransactions:
 
+
+
                         /*TODO
                          * Transaction History
-                       
-                            foreach (var transaction in account.Transactions)
+                         * 
+                         *foreach (var transaction in account.Transactions)
                             {
-		                        Console.WriteLine($"Transaction Id {transaction.Id}: {transaction.Description} for N${transaction.Amount}");
-	                        }
-                        
+                                Console.WriteLine($"Transaction Id {transaction.Id}: {transaction.Description} for N${transaction.Amount}");
+                            }
                         */
 
                         break;
                     case (int)_menuOptions.CheckBalance:
 
+
+
                         /*TODO
 	                        View Balance
-
                             Console.WriteLine($"Your available balance is = {account.AvailableBalance} \n Press any key to continue ...");
-
 	                     */
 
                         break;
@@ -131,10 +134,13 @@ namespace BankingAppTest
 
         public static int DisplayMenu()
         {
+          
+
 	        int menuOption = 0;
 	        string stringMenuOption = "";
             do
 	        {
+                //Console.Clear();
                 Console.WriteLine(
 			        "Main Menu :" + Environment.NewLine +
 			        "Press 1 to Post Transaction" + Environment.NewLine +

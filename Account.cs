@@ -21,10 +21,10 @@ namespace BankingAppTest
 		private void UpdateBalance(decimal amount)
 		{
 			/*Todo add available balance check*/
-			if (amount > AvailableBalance)
-			{
-				throw new Exception("Insufficient funds in this account!");
-			}
+			//if (amount > AvailableBalance)
+			//{
+			//	throw new Exception("Insufficient funds in this account!");
+			//}
 
 			AvailableBalance -= amount;
 		}
@@ -38,13 +38,17 @@ namespace BankingAppTest
 		public Transaction AddTransaction(string description, decimal amount)
 		{
 			/*TODO
+			 * 
 			 * Ensure than negative transactions aren't accepted
-
-				if (amount > 0)
+			 * 
+			 *if (amount < 0)
 				{
-				   throw new Exception("Cannot add a negative value"); 
+					throw new Exception("Cannot add a negative value");
 				}
-			*/
+			 * 
+			 * 
+			 */
+
 
 			var transaction = new Transaction()
 			{
@@ -52,6 +56,7 @@ namespace BankingAppTest
 				Description = description
 			};
 
+			
 			UpdateBalance(amount);
 
 			Transactions.Add(transaction);
