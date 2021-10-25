@@ -12,8 +12,7 @@ namespace BankingAppTest
      * 1. Add a Transaction.
      *      => Available balance should be outputed to the screen after a successfull transaction was posted
      *
-.     * 2. View A list of Transactions(Transaction History)
-     *      => Account Balancs. that occured on the system
+.     * 2. View A list of all Transactions(Transaction History)
      *
      * 3. Check Available Balance 
      * 
@@ -80,12 +79,13 @@ namespace BankingAppTest
                         {
                             /*TODO
                            
-                                Post(add) a Transaction
+                               -> Post(add) a Transaction
+                                
                                 account.AddTransaction(description, amount);
-                                Console.WriteLine($"Transaction added: {description} for N${amount} new balance {account.AvailableBalance}");
+                                
+                               -> Display Transaction Info of new Balance after transaction posted
 
-                                TODO
-                                Display Transaction Info of new Balance
+                                Console.WriteLine($"Transaction added: {description} for N${amount} new balance {account.AvailableBalance}");
                               
                            
                              */
@@ -104,7 +104,7 @@ namespace BankingAppTest
 
 
                         /*TODO
-                         * Transaction History
+                         * View A list of all Transactions(Transaction History)
                          * 
                          *foreach (var transaction in account.Transactions)
                             {
@@ -118,7 +118,7 @@ namespace BankingAppTest
 
 
                         /*TODO
-	                        View Balance
+	                        View Available Balance
                             Console.WriteLine($"Your available balance is = {account.AvailableBalance} \n Press any key to continue ...");
 	                     */
 

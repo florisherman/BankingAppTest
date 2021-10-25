@@ -20,7 +20,8 @@ namespace BankingAppTest
 		/// <param name="amount"></param>
 		private void UpdateBalance(decimal amount)
 		{
-			/*Todo add available balance check*/
+			/*TODO
+			 * Add functionality to ensure there is enough funds in the account before a debit can occur. */
 			//if (amount > AvailableBalance)
 			//{
 			//	throw new Exception("Insufficient funds in this account!");
@@ -49,14 +50,12 @@ namespace BankingAppTest
 			 * 
 			 */
 
-
 			var transaction = new Transaction()
 			{
 				Amount = amount,
 				Description = description
 			};
 
-			
 			UpdateBalance(amount);
 
 			Transactions.Add(transaction);
