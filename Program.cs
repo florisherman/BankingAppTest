@@ -5,9 +5,10 @@ namespace BankingAppTest
 {
 
     /***
+     * 
      * Test Objectives
      * 
-     * Basic C# knowledge
+     * Essential C# knowledge
      *
      * 1. Add a Transaction.
      *      => Available balance should be outputed to the screen after a successfull transaction was posted
@@ -33,12 +34,13 @@ namespace BankingAppTest
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Capricorn Group Test App!");
+            Console.WriteLine("Welcome to Capricorn Group Test Application!");
+            Console.WriteLine("Together we do better.");
 
-            Console.Write("Enter Customer Name :");
+            Console.Write("Enter Customer Name:");
             var firstName = Console.ReadLine();
 
-            Console.Write("Enter Customer Surname :");
+            Console.Write("Enter Customer Surname:");
             var lastName = Console.ReadLine();
 
             var customer = new Customer()
@@ -69,7 +71,7 @@ namespace BankingAppTest
                         string stringAmount = "";
                         do
                         {
-	                        Console.Write("Amount :");
+	                        Console.Write("Amount:");
 	                        stringAmount = Console.ReadLine();
 
                         } while (!Decimal.TryParse(stringAmount, out amount));
@@ -102,7 +104,8 @@ namespace BankingAppTest
                          * 
                          * View A list of all Transactions(Transaction History)
                          * 
-                        */
+                         */
+                        Console.WriteLine("Press any key to continue ...");
 
                         break;
                     case (int)_menuOptions.CheckBalance:
@@ -111,9 +114,10 @@ namespace BankingAppTest
 
                         /*TODO
                          * 
-	                        View Available Balance
-
+	                     *  View Available Balance
+                         *
 	                     */
+                        Console.WriteLine("Press any key to continue ...");
 
                         break;
                     case (int)_menuOptions.Quit:
@@ -126,9 +130,7 @@ namespace BankingAppTest
         }
 
         public static int DisplayMenu()
-        {
-          
-
+        {         
 	        int menuOption = 0;
 	        string stringMenuOption = "";
             do
