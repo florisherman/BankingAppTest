@@ -21,11 +21,10 @@ namespace BankingAppTest
 		private void UpdateBalance(decimal amount)
 		{
 			/*TODO
-			 * Add functionality to ensure there is enough funds in the account before a debit can occur. */
-			//if (amount > AvailableBalance)
-			//{
-			//	throw new Exception("Insufficient funds in this account!");
-			//}
+			 * 
+			 * Add functionality to ensure there is enough funds in the account before a debit can occur. 
+			 *
+			 */
 
 			AvailableBalance -= amount;
 		}
@@ -41,12 +40,6 @@ namespace BankingAppTest
 			/*TODO
 			 * 
 			 * Ensure than negative transactions aren't accepted
-			 * 
-			 *if (amount < 0)
-				{
-					throw new Exception("Cannot add a negative value");
-				}
-			 * 
 			 * 
 			 */
 

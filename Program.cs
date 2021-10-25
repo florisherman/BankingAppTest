@@ -81,12 +81,7 @@ namespace BankingAppTest
                            
                                -> Post(add) a Transaction
                                 
-                                account.AddTransaction(description, amount);
-                                
                                -> Display Transaction Info of new Balance after transaction posted
-
-                                Console.WriteLine($"Transaction added: {description} for N${amount} new balance {account.AvailableBalance}");
-                              
                            
                              */
                         }
@@ -104,12 +99,9 @@ namespace BankingAppTest
 
 
                         /*TODO
+                         * 
                          * View A list of all Transactions(Transaction History)
                          * 
-                         *foreach (var transaction in account.Transactions)
-                            {
-                                Console.WriteLine($"Transaction Id {transaction.Id}: {transaction.Description} for N${transaction.Amount}");
-                            }
                         */
 
                         break;
@@ -118,8 +110,9 @@ namespace BankingAppTest
 
 
                         /*TODO
+                         * 
 	                        View Available Balance
-                            Console.WriteLine($"Your available balance is = {account.AvailableBalance} \n Press any key to continue ...");
+
 	                     */
 
                         break;
